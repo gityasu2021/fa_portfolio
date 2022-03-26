@@ -1,7 +1,6 @@
 
 html{
   font-size: 62.5%;
-  /*ベースを10pxにしています*/
 }
 
 body{
@@ -34,10 +33,10 @@ li {
 
   margin: 100px 0;
 }
+
 /* h2タグ用 */
 .section-title {
   border-bottom: solid 1px #fff;
-  /* 下線をテキストと同じ幅にあわせるために設定 */
   display: inline-block;
   font-size: 6rem;
   letter-spacing: 0.1rem;
@@ -52,22 +51,12 @@ li {
   margin: 0 auto;
 }
 
-/* MainとFooter全体を囲むクラス */
-
 .container {
   background: #050507;
   color: #fff;
   text-align: center;
   
 }
-
-/*
-サイドボタン
-初期状態は「translateY(60px);」で画面の右側に隠しておく
-Galleryのタイトルが画面下にきたタイミングで、jQueryでCSSを変更してボタンをスライドしながら表示する
-Accessのタイトルが画面下にきたタイミングで、jQueryでCSSを変更してボタンをスライドしながら非表示にする
-※main.jsの「サイドボタンを表示」を参照
-*/
 
 .side-btn{
   position:fixed;
@@ -87,22 +76,15 @@ Accessのタイトルが画面下にきたタイミングで、jQueryでCSSを�
   padding: 15px 0;
   transition: 0.3s;
 }
+
 .side-btn a:last-of-type{
   border-left: solid 1px #fff;
 }
+
 .side-btn a:hover{
   opacity: 0.7;
 }
 
-
-/*
-Accessの背景画像
-初期状態は「display: none;」で非表示にしておく
-Accessのタイトルが画面下にきたタイミングで、jQueryのfadeInで表示する
-Contactのタイトルが画面下にきたタイミングで、jQueryのfadeOutで非表示にする
-「position: fixed;」で固定し「width: 100vw;」「height: 100vh;」で全画面表示する
-※main.jsの「Accessの背景画像を表示」を参照
-*/
 .bg {
   background: url("../img/bg.jpg") center center repeat ;
   width: 100vw;
@@ -112,48 +94,24 @@ Contactのタイトルが画面下にきたタイミングで、jQueryのfadeOut
   left: 0;
   display: none;
   z-index: 10;
-
 }
 
-
-
-/*
-フェード表示
-InformationとGalleryの画像を下からふわっと表示させるためのクラス
-「transform: translate(0, 50%);」で下にさげた状態で、
-「opacity: 0;」で非表示にしておく
-*/
 .fadein {
   opacity: 0;
   transform: translate(0, 50%);
   transition: 2s;
 }
-/*
-fadeinクラスの要素が画面下にきたタイミングで、jQueryのinviewにてshowクラスを追加して
-「transform: translate(0, 0);」と「opacity: 1;」で表示させる
-※main.jsの「フェード表示」を参照
-*/
+
 .fadein.show {
   transform: translate(0, 0);
   opacity: 1;
 }
-
-/*-------------------------------------------
-ヘッダー
--------------------------------------------*/
-/*
-ヘッダーロゴ
-初期状態は「display: none;」で非表示にしておく
-所定のスクロール位置にきたらjQueryのfadeInで表示する
-※main.jsの「ロゴ、ハンバーガーメニューの表示」を参照
-*/
 
 .header__title{
   line-height: 1px;
   position: fixed;
   top: 35px;
   left: 30px;
- /* 一番上にくるように設定 */
  z-index: 40;
  display: none;
 }
@@ -161,15 +119,6 @@ fadeinクラスの要素が画面下にきたタイミングで、jQueryのinvie
 .header__title a {
   display: block;
 }
-
-
-/*
-ハンバーガ―メニュー
-初期状態は「display: none;」で非表示にしておく
-所定のスクロール位置にきたらjQueryのfadeInで表示する
-※main.jsの「ロゴ、ハンバーガーメニューの表示」を参照
-*/
-
 
 .hamburger{
   width: 42px;
@@ -201,33 +150,27 @@ fadeinクラスの要素が画面下にきたタイミングで、jQueryのinvie
   top: 31px;
 }
 
-
 .hamburger.active span:nth-child(1) {
   top: 21px;
   left: 6px;
   transform: rotate(-45deg);
 }
+
 .hamburger.active span:nth-child(2),
 .hamburger.active span:nth-child(3) {
   top: 21px;
   transform: rotate(45deg);
 }
 
-
-
 .header__nav{
 width: 100%;
-
 color: #050507;
 position: fixed;
 top: 0;
 left: 0;
-
-/* background-color: #fff; */
 text-align: center;
 transform: translateY(-100%);
   transition: 0.6s;
-  /* ロゴ、ハンバーガーより下でAccessページの背景画像よりも上にくるよう設定 */
   z-index: 30;
 }
 
@@ -248,34 +191,19 @@ transform: translateY(-100%);
   transform: translateY(0);
 
 }
-/*-------------------------------------------
-Mainvisual
--------------------------------------------*/
 
 .mainvisual{
-
   display: flex;
   justify-content: center;
-  /* スクロールで画像を拡大させた際に、横スクロールが出ないよう設定 */
   overflow-x: hidden;
 }
 
-/*
-スクロールしたタイミングでjQueryにて画像を拡大するが、
-その際に画像が縮まないよう「flex-shrink: 0;」を設定する
-*/
 .mainvisual img {
   width: calc(100%/3);
   height: 100vh;
   flex-shrink: 0;
   object-fit: cover;
-
 }
-
-
-/*-------------------------------------------
-Information
--------------------------------------------*/
 
 .info{
   margin-bottom: 140px;
@@ -297,40 +225,34 @@ Information
   margin: 20px 0;
 }
 
-
 .info__dateJa{
   font-size: 1.8rem;
 }
 
-
-/*-------------------------------------------
-Gallery
--------------------------------------------*/
 .gallery {
   margin-bottom: 480px;
 }
+
 .gallery .list li {
   margin-bottom: 60px;
 }
+
 .gallery .list li img {
   width: 48%;
 }
-/* 奇数のliタグは左寄せ */
+
 .gallery .list li:nth-child(odd) {
   text-align: left;
 }
-/* 偶数のliタグは右寄せ */
+
 .gallery .list li:nth-child(even) {
   text-align: right;
 }
+
+
 /*-------------------------------------------
 Access
 -------------------------------------------*/
-/*
-「z-index: 20;」でコンテンツが背景画像の上にくるようにする
-※デフォルトのposition（static）では、z-indexを指定できないため。
-「position: relative;」設定する
-*/
 .access {
   position: relative;
   margin-bottom: 480px;
@@ -361,15 +283,10 @@ Access
 /*-------------------------------------------
 Contact
 -------------------------------------------*/
-/*
-「z-index: 20;」でコンテンツが背景画像の上にくるようにする
-*/
-
 .contact{
   margin-bottom: 200px;
   position: relative;
   z-index: 20;
-
 }
 
 .contact__btn {
@@ -382,9 +299,6 @@ display: block;
   transition: 0.3s;
 }
 
-/*
-ボタン矢印
-*/
 .contact .contact__btn::before,
 .contact .contact__btn::after {
 content: "";
@@ -393,11 +307,9 @@ right: -40px;
 height:1px;
 background-color: #fff;
 transition:.3s;
-
 }
 
-.contact .contact__btn::before {
- 
+.contact .contact__btn::before { 
   width: 120px;
   top: 48px;
   
@@ -410,16 +322,13 @@ transition:.3s;
   }
 
   .contact__btn:hover {
- opacity:.7;
- 
+  opacity:.7;
   }
 
   .contact__btn:hover::before,
-  .contact__btn:hover::after
-  {
-    right: -50px;
-    
-     }
+  .contact__btn:hover::after{
+  right: -50px;
+  }
 
 /*-------------------------------------------
 Footer
@@ -442,17 +351,18 @@ display: flex;
 align-items: center;
   margin-top: 30px;
 }
+
 .footer__innerSns li{
   margin-right: 15px;
+}
 
-  
-  }
-  .footer__innerRight {
-    display: flex;
-  }
+.footer__innerRight {
+  display: flex;
+}
 .footer__innerRight li:last-child {
   margin-left: 30px;
 }
+
 /*-------------------------------------------
 SP
 -------------------------------------------*/
@@ -511,16 +421,11 @@ SP
     width: 100%;
   }
 
-  /*
-  スマホの時は矢印を消す
-  */
-
   .contact .contact__btn::before,
   .contact .contact__btn::after {
   content: none;
-  
-  
   }
+
   .footer{
   flex-direction: column;
   align-items: flex-start;
@@ -530,5 +435,4 @@ SP
   .footer__innerSns{
     margin-bottom: 30px;
   }
-
 }
